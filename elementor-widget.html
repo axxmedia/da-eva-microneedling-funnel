@@ -138,8 +138,8 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 70px;
-  padding: 0 28px;
+  height: 110px;
+  padding: 0 40px;
   max-width: 1100px;
   margin: 0 auto;
 }
@@ -148,7 +148,7 @@
   align-items: center;
   flex-shrink: 0;
 }
-.deva-lp .logo img { height: 48px; width: auto; display: block; }
+.deva-lp .logo img { height: 110px; width: auto; display: block; }
 .deva-lp .logo-text {
   font-family: 'Cormorant Garamond', serif;
   font-size: 1.45rem;
@@ -699,6 +699,67 @@
   .deva-lp .gallery-item { height: 180px; }
   .deva-lp .hero-eyebrow { font-size: 9px; padding: 6px 14px; }
 }
+
+/* ── BEHANDLUNG SECTION ─────────────────────────────────────────── */
+.deva-lp .behandlung-video-wrap {
+  position: relative;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.12);
+  aspect-ratio: 16/9;
+  background: #0d0d0d;
+}
+.deva-lp .behandlung-video-wrap video {
+  width: 100%; height: 100%; object-fit: cover; display: block;
+}
+.deva-lp .behandlung-split {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 56px;
+  align-items: center;
+  margin-bottom: 64px;
+}
+.deva-lp .behandlung-text h2 { font-family: 'Cormorant Garamond', serif; font-size: clamp(1.9rem,3vw,2.8rem); font-weight: 600; color: var(--dark); margin-bottom: 20px; line-height: 1.2; }
+.deva-lp .behandlung-text h2 em { color: var(--gold); font-style: italic; }
+.deva-lp .behandlung-text p { color: #555; line-height: 1.8; margin-bottom: 24px; font-size: 1rem; }
+.deva-lp .behandlung-bullets { list-style: none; padding: 0; margin: 0 0 32px; display: flex; flex-direction: column; gap: 12px; }
+.deva-lp .behandlung-bullets li { display: flex; align-items: flex-start; gap: 12px; font-size: 0.95rem; color: #444; }
+.deva-lp .behandlung-bullets li::before { content: ''; display: block; flex-shrink: 0; width: 18px; height: 18px; margin-top: 2px; background: var(--gold); border-radius: 50%; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12'%3E%3Cpolyline points='2,6 5,9 10,3' stroke='white' stroke-width='1.8' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-size: cover; }
+.deva-lp .behandlung-imgs {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+.deva-lp .behandlung-img-item {
+  border-radius: 12px;
+  overflow: hidden;
+  aspect-ratio: 3/4;
+  box-shadow: 0 8px 28px rgba(0,0,0,0.10);
+}
+.deva-lp .behandlung-img-item img {
+  width: 100%; height: 100%; object-fit: cover; display: block;
+  transition: transform 0.5s ease;
+}
+.deva-lp .behandlung-img-item:hover img { transform: scale(1.04); }
+.deva-lp .behandlung-hinweis {
+  background: var(--creme);
+  border-left: 3px solid var(--gold);
+  border-radius: 0 10px 10px 0;
+  padding: 18px 24px;
+  margin-top: 32px;
+  font-size: 0.9rem;
+  color: #555;
+  line-height: 1.7;
+}
+.deva-lp .behandlung-hinweis strong { color: var(--dark); }
+@media (max-width: 900px) {
+  .deva-lp .behandlung-split { grid-template-columns: 1fr; gap: 36px; }
+  .deva-lp .behandlung-imgs { grid-template-columns: repeat(3,1fr); gap: 10px; }
+}
+@media (max-width: 540px) {
+  .deva-lp .behandlung-imgs { grid-template-columns: 1fr; }
+  .deva-lp .behandlung-img-item { aspect-ratio: 4/3; }
+}
 </style>
 
 
@@ -871,6 +932,55 @@
     </div>
   </section>
 
+  <!-- 6b. BEHANDLUNG BESCHREIBUNG -->
+  <section class="section">
+    <div class="lp-container">
+      <div class="text-center" style="margin-bottom:48px">
+        <span class="section-tag">Die Behandlung</span>
+        <div class="gold-line"></div>
+        <h2 class="section-title">Was ist <em style="color:var(--gold);font-style:italic">Microneedling</em>?</h2>
+        <p class="section-sub">Das Beauty-Treatment, auf das Hollywood-Stars schwören – für sichtbar straffere, frischere Haut ohne OP und ohne Botox.</p>
+      </div>
+
+      <!-- Video + Text -->
+      <div class="behandlung-split">
+        <div class="behandlung-video-wrap">
+          <video controls preload="metadata" poster="https://da-eva.de/wp-content/uploads/2026/04/magazin-microneedling-2.webp">
+            <source src="https://da-eva.de/wp-content/uploads/2026/04/Needling.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div class="behandlung-text">
+          <h2>Natürliche Hautregeneration <em>von innen</em></h2>
+          <p>Beim Microneedling wird mit einem sterilen Nadelmodul (dem sogenannten Microneedling-Pen) über die Hautoberfläche gefahren. Die feinen Nadeln aktivieren die körpereigene Produktion von Kollagen, Elastin und Hyaluronsäure – das natürliche Anti-Aging-Trio für jugendlich strahlende Haut.</p>
+          <ul class="behandlung-bullets">
+            <li>Sichtbar straffere Haut bereits ab der 1. Sitzung</li>
+            <li>Falten, Pigmentflecken &amp; Narben werden reduziert</li>
+            <li>12 Nadeln aus hochwertigem Chirurgenstahl</li>
+            <li>BABOR Wirkstoff-Booster mit tri-molekularer Hyaluronsäure</li>
+            <li>Schmerzarme Behandlung – nur die oberste Hautschicht</li>
+            <li>Ca. 45–60 Minuten pro Sitzung</li>
+          </ul>
+          <div class="behandlung-hinweis">
+            <strong>Nach der Behandlung:</strong> Die Haut benötigt 2–3 Tage zur Regeneration. Sonnenschutz ist während der gesamten Behandlungskur Pflicht. Ein leichtes Make-up ist bereits ab Tag 2 möglich.
+          </div>
+        </div>
+      </div>
+
+      <!-- 3 Bilder -->
+      <div class="behandlung-imgs">
+        <div class="behandlung-img-item">
+          <img src="https://da-eva.de/wp-content/uploads/2026/04/magazin-microneedling-2.webp" alt="Microneedling Behandlung – Da Eva Cosmetics" loading="lazy" />
+        </div>
+        <div class="behandlung-img-item">
+          <img src="https://da-eva.de/wp-content/uploads/2026/04/magazin-microneedling.webp" alt="Microneedling Gesicht – professionell" loading="lazy" />
+        </div>
+        <div class="behandlung-img-item">
+          <img src="https://da-eva.de/wp-content/uploads/2026/04/microneedling-pen.webp" alt="Microneedling Pen – BABOR Technologie" loading="lazy" />
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- 7. 3-SCHRITT-PROZESS -->
   <section class="section section--creme">
     <div class="lp-container text-center">
@@ -1033,6 +1143,11 @@
 
 <script>
 (function() {
+  // Favicon
+  var favicon = document.querySelector("link[rel*='icon']");
+  if (!favicon) { favicon = document.createElement('link'); document.head.appendChild(favicon); }
+  favicon.rel = 'shortcut icon';
+  favicon.href = 'https://da-eva.de/wp-content/uploads/2023/10/cropped-2_512x512px_RZ_V1_Logos_Stores_Revieve_MG-MG-18840.jpg';
   document.querySelectorAll('.deva-lp .faq-question').forEach(function(btn) {
     btn.addEventListener('click', function() {
       var item = this.closest('.faq-item');
